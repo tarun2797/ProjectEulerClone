@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Answer</title>
+</head>
+<body>
+{% block content %}
+    <button><a href="/logout/">LOG OUT</a></button>
+        <h3>ID</h3>
+        <h1>{{question_details.id}}</h1>
+        <br/><br/>
+        <h3>Title</h3>
+        <h1>{{question_details.title}}</h1>
+        <br/><br/>
+        <h3>Description</h3>
+        <h1>{{question_details.description}}</h1>
+        <br/><br/>
+<form method="POST" class="post-form">{% csrf_token %}
+    Answer : <br>
+    <input type="text" name="user answer">
+    <br><br>
+    <button type="submit" class="save btn btn-default">Submit</button>
+</form>
+{% endblock %}
+</body>
+</html>

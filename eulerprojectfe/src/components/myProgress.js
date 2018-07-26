@@ -1,0 +1,97 @@
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+import Cookies from 'universal-cookie';
+
+function Transition(props) {
+  return <Slide direction="right" {...props} />;
+}
+
+class MyProgress extends React.Component {
+
+   constructor(props){
+        super(props);
+        this.state = {
+            open: true,
+            profile:"",
+        };
+   }
+
+   cookies = new Cookies();
+
+   componentDidMount(){
+
+        fetch(`http://127.0.0.1:8000/my_account/api/my_profile/`,
+            {
+            method: 'get',
+            headers: new Headers({
+            'Authorization': 'JWT '+this.cookies.get('userJwtToken').token,
+            'Content-type': 'application/json'
+                }),
+            })
+            .then(results =>{
+                return results.json();
+            })
+            .then(data => {
+                console.log(data);
+                this.setState({profile:data});
+                this.setState({username:data.user.username});
+                this.setState({location:data.location});
+                this.setState({bio:data.bio});
+                this.setState({birth_date:data.birth_date});
+                this.setState({email:data.user.email});
+                this.setState({solved_qs:data.solved_qs})
+                console.log("profile = ",this.state.profile)
+            })
+            .catch(e => {console.log("Error occured in fetching students..")});
+    }
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+    this.props.unset_func()
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+  render() {
+    //console.log('profile = ',this.state.username)
+    return (
+      <div>
+
+        <Dialog
+          open={this.state.open}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={this.handleClose}
+          aria-labelledby="alert-dialog-slide-title"
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle id="alert-dialog-slide-title">
+            {"Progress Card"}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-slide-description">
+              Hello {this.state.username}
+              <br/>
+              You have solved questions - {this.state.solved_qs}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              OK
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+    );
+  }
+}
+
+export default MyProgress;

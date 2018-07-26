@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions List</title>
+    <style>table, th, td { border: 1px solid black;border-collapse: collapse;} a{color:chocolate}</style>
+</head>
+<body>
+<h1><center>Welcome To The Project Euler</center></h1>
+<table align="center">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Difficulty</th>
+    </tr>
+    {% for i in question_details %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td><a href="{{i.id}}">{{i.title}}</a></td>
+        <td>{{i.difficulty}}</td>
+    </tr>
+    {% endfor %}
+    <button><a href="/my_account/add_question/">ADD Question</a></button>
+    <br/>
+    <button><a href="/logout/">LOG OUT</a></button>
+</table>
+</body>
+</html>
+</body>
+</html>
