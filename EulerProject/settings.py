@@ -25,7 +25,7 @@ SECRET_KEY = 'wc&x-z2-dlmxmfy4)dk-y27^my5amyxwzi6=)6amzorg=!xu^8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['project-euler-clone.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['project-euler-clone.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
