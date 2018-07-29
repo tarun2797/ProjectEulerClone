@@ -55,7 +55,7 @@ class SubmitAnswer extends Component{
         {
           method: 'get', // or 'PUT'
           headers: new Headers({
-                 'Authorization': 'JWT '+this.cookies.get('userJwtToken').token,
+                 'Authorization': 'JWT '+ localStorage.getItem('userJwtToken'),
                  'Content-type': 'application/json'
           }),
         }).then(res => res.json())
@@ -94,7 +94,7 @@ class SubmitAnswer extends Component{
           method: 'POST', // or 'PUT'
           body: formData, // data can be `string` or {object}!
           headers: new Headers({
-                    'Authorization': 'JWT '+this.cookies.get('userJwtToken').token,
+                    'Authorization': 'JWT '+ localStorage.getItem('userJwtToken'),
             }),
         }).then(res => res.json())
         .catch(error => console.error('Error:', error))
@@ -113,7 +113,7 @@ class SubmitAnswer extends Component{
             {
             method: 'get',
             headers: new Headers({
-            'Authorization': 'JWT '+this.cookies.get('userJwtToken').token,
+            'Authorization': 'JWT '+ localStorage.getItem('userJwtToken'),
             'Content-type': 'application/json'
                 }),
             })
@@ -129,6 +129,7 @@ class SubmitAnswer extends Component{
             .catch(e => {console.log("Error occured in fetching students..")});
 
             this.isSolvedAlready()
+//            this.setState({dumy:"dumy"})
     }
 
     render(){

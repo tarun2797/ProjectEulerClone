@@ -173,12 +173,13 @@ class Questions extends Component{
 
         if(isLoggedIn){
 
-            console.log("jwt token check = ",'JWT '+this.cookies.get('userJwtToken').token)
+//            console.log("jwt token check = ",'JWT '+this.cookies.get('userJwtToken').token)
+              console.log('local storage jwt token check = ','JWT '+ localStorage.getItem('userJwtToken'))
 
             fetch('http://127.0.0.1:8000/my_account/api/questions/',{
                  method: 'get',
                  headers: new Headers({
-                 'Authorization': 'JWT '+this.cookies.get('userJwtToken').token,
+                 'Authorization': 'JWT '+ localStorage.getItem('userJwtToken'),
                  'Content-type': 'application/json'
                  }),
             })
@@ -200,7 +201,13 @@ class Questions extends Component{
     }
 
     isAuthenticated(){
-        if (this.cookies.get('userJwtToken') === undefined){
+//        if (this.cookies.get('userJwtToken') === undefined){
+//            return false;
+//        }
+//        else{
+//            return true;
+//        }
+        if (localStorage.getItem('user') == null){
             return false;
         }
         else{

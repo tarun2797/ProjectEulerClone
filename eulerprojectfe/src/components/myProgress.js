@@ -20,6 +20,7 @@ class MyProgress extends React.Component {
             open: true,
             profile:"",
         };
+        console.log("testing in dialog box")
    }
 
    cookies = new Cookies();
@@ -30,7 +31,7 @@ class MyProgress extends React.Component {
             {
             method: 'get',
             headers: new Headers({
-            'Authorization': 'JWT '+this.cookies.get('userJwtToken').token,
+            'Authorization': 'JWT '+ localStorage.getItem('userJwtToken'),
             'Content-type': 'application/json'
                 }),
             })
@@ -45,31 +46,39 @@ class MyProgress extends React.Component {
                 this.setState({bio:data.bio});
                 this.setState({birth_date:data.birth_date});
                 this.setState({email:data.user.email});
-                this.setState({solved_qs:data.solved_qs})
-                console.log("profile = ",this.state.profile)
+                this.setState({solved_qs:data.solved_qs});
+                console.log("profile = ",this.state.profile);
+
             })
             .catch(e => {console.log("Error occured in fetching students..")});
     }
 
-  handleClickOpen = () => {
-    this.setState({ open: true });
-    this.props.unset_func()
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
+//  handleClickOpen = () => {
+//    this.setState({ open: true });
+//  };
+//
+//  handleClose = () => {
+//    this.setState({ open: false });
+//  };
+//
+//   setOpen(){
+//        this.setState({ open: true });
+//   }
+//
+//    unsetOpen(){
+//        this.setState({ open: false });
+//    }
 
   render() {
     //console.log('profile = ',this.state.username)
+    console.log("state of dialog = ",this.state.open)
     return (
       <div>
-
         <Dialog
-          open={this.state.open}
+          open={this.props.openDialog}
           TransitionComponent={Transition}
           keepMounted
-          onClose={this.handleClose}
+          onClose={this.props.handleClose}
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description"
         >
@@ -84,7 +93,7 @@ class MyProgress extends React.Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={this.props.handleClose} color="primary">
               OK
             </Button>
           </DialogActions>

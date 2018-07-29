@@ -12,7 +12,6 @@ from EulerApp.serializers import *
 from rest_framework.decorators import authentication_classes, permission_classes, api_view
 from rest_framework.permissions import AllowAny
 
-@authentication_classes([])
 @permission_classes([])
 class UserProfilesAPIView(APIView):
 

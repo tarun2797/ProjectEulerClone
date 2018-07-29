@@ -42,11 +42,22 @@ class Login extends Component {
         })
         .then((myJson) => {
             if ('token' in myJson){
+
+                localStorage.setItem('user', this.state.username);
+                localStorage.setItem('userJwtToken',myJson.token);
+
+                //const dumy = localStorage.getItem('myCat');
+                //console.log('testing local storage = ',dumy)
+
+                console.log('local storage user = ',localStorage.getItem('user'))
+                console.log('local storage userJwtToken = ',localStorage.getItem('userJwtToken'))
+
                 //alert("Logged in i guess")
-                console.log("Validated")
-                this.cookies.set('userJwtToken', myJson, { path: '/',} );
-                this.cookies.set('username',formData.get('username'), {path : '/', })
-                console.log("token = ",this.cookies.get('userJwtToken'));
+                //console.log("Validated")
+//                console.log("date = ",new Date(Date.now()+(60*60*24*365*365)))
+//                this.cookies.set('userJwtToken', myJson, { path: '/',expires: new Date(Date.now()+(60*60*24*365*365)) });
+//                this.cookies.set('username',formData.get('username'), {path : '/',expires: new Date(Date.now()+(60*60*24*365*365)) })
+//                console.log("token = ",this.cookies.get('userJwtToken'));
                 this.props.onSuccessfulLogin();
             }
             else{

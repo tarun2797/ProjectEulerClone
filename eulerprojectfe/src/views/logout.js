@@ -16,6 +16,18 @@ import {
 } from "react-router-dom";
 import MyProgress from '../components/myProgress'
 
+import Button from '@material-ui/core/Button';
+import Slide from '@material-ui/core/Slide';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
+function Transition(props) {
+  return <Slide direction="right" {...props} />;
+}
+
 class Logout extends Component{
 
     cookies = new Cookies();
@@ -44,21 +56,34 @@ class Logout extends Component{
 
     setProgress = () => {
         this.setState({show: 'myprogress', open: false });
+        this.setState({ openDialog: true });
+    }
+
+    unsetProgress = () => {
+        this.setState({ openDialog: false });
     }
 
     handleLogout(event){
 //        this.cookies.remove('userJwtToken');
 //        this.cookies.remove('username');
-        this.cookies.set('userJwtToken',"", { path: '/',expires: new Date(Date.now()-30)} );
-        this.cookies.set('username',"", {path : '/', expires: new Date(Date.now()-30)})
-        console.log(this.cookies.get('userJwtToken'));
+//        this.cookies.set('userJwtToken',"", { path: '/',expires: new Date(Date.now()-30)} );
+//        this.cookies.set('username',"", {path : '/', expires: new Date(Date.now()-30)})
+//        console.log(this.cookies.get('userJwtToken'));
+        localStorage.removeItem('user');
+        localStorage.removeItem('userJwtToken');
 
-        console.log("removed token");
+        console.log("local storage - removed token");
         this.setState({dumy:"dumy"});
     }
 
     isAuthenticated(){
-        if (this.cookies.get('userJwtToken') === undefined){
+//        if (this.cookies.get('userJwtToken') === undefined){
+//            return false;
+//        }
+//        else{
+//            return true;
+//        }
+        if (localStorage.getItem('user') == null){
             return false;
         }
         else{
@@ -85,7 +110,7 @@ class Logout extends Component{
                         <MuiThemeProvider>
                         <AppBar
                             title = "Project Euler"
-                            titleStyle={{textAlign: "center"}}
+                            titleStyle={{textAlign: "center",fontFamily: "Comic Sans MS",}}
                             iconElementRight={<RaisedButton label="LogOut" primary={true} style={style} onClick={(event) => this.handleLogout(event)}/>}
                             onTouchTap={this.handleLogout.bind(this)}
                             onLeftIconButtonClick={this.handleToggle}
@@ -103,15 +128,15 @@ class Logout extends Component{
                             <MenuItem id="myprogress" onClick={this.setProgress}>My Progress</MenuItem>
                         </Drawer>
                         </MuiThemeProvider>
+                        {this.state.show==='problems' &&(
+                            <div>
+                                <Redirect to='/eulerprojectfe/questions/view-all'/>
+                                { this.unSetShow()}
+                            </div>
+                        )}
                         {this.state.show==='myprofile' &&(
                             <div>
                                 <Redirect to='/eulerprojectfe/questions/myprofile/'/>
-
-                            </div>
-                        )}
-                        {this.state.show==='problems' &&(
-                            <div>
-                                <Redirect to='/eulerprojectfe/questions/view'/>
 
                             </div>
                         )}
@@ -123,7 +148,7 @@ class Logout extends Component{
                         )}
                         {this.state.show==='myprogress' &&(
                             <div>
-                                <MyProgress />
+                                <MyProgress openDialog={this.state.openDialog} handleClose={this.unsetProgress}/>
                             </div>
                         )}
                     </div>

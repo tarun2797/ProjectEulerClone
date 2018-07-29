@@ -26,7 +26,7 @@ class App extends Component {
         <Router>
               <div>
               <Route path="/eulerprojectfe/questions" component={Logout} />
-              <Route exact path="/eulerprojectfe/questions/view" component={Questions} />
+              <Route exact path="/eulerprojectfe/questions/view-all" component={Questions} />
               <Route exact path="/eulerprojectfe/questions/view/:id" component={SubmitAnswer} />
               <Route exact path="/eulerprojectfe/questions/myprofile" component={MyProfile} />
               <Route exact path="/eulerprojectfe/questions/editprofile" component={EditProfile} />

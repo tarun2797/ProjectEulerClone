@@ -40,6 +40,12 @@ REST_FRAMEWORK = {
     )
 }
 
+import datetime
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1)
+}
+
 INSTALLED_APPS = [
     'rest_framework',
     'EulerApp.apps.EulerappConfig',
@@ -94,13 +100,20 @@ WSGI_APPLICATION = 'EulerProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'euler_DB',
+#         'HOST': 'localhost',
+#         'USER':"root",
+#         'PASSWORD': "root"
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'euler_DB',
-        'HOST': 'localhost',
-        'USER':"root",
-        'PASSWORD': "root"
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

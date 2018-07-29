@@ -44,7 +44,13 @@ class LoginView extends Component{
     cookies = new Cookies();
 
     isAuthenticated(){
-        if (this.cookies.get('userJwtToken') === undefined){
+//        if (this.cookies.get('userJwtToken') === undefined){
+//            return false;
+//        }
+//        else{
+//            return true;
+//        }
+        if (localStorage.getItem('user') == null){
             return false;
         }
         else{
@@ -92,7 +98,7 @@ class LoginView extends Component{
     console.log("check login = ",isLoggedIn," , value = ",this.cookies.get('userJwtToken'))
         return(
             <div>
-                {isLoggedIn ? <Redirect to='/eulerprojectfe/questions/view'/> : (
+                {isLoggedIn ? <Redirect to='/eulerprojectfe/questions/view-all'/> : (
                 <div>
                     <div>
                         {this.state.screen}

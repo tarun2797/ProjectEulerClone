@@ -70,7 +70,7 @@ class EditProfile extends Component{
             {
             method: 'get',
             headers: new Headers({
-            'Authorization': 'JWT '+this.cookies.get('userJwtToken').token,
+            'Authorization': 'JWT '+ localStorage.getItem('userJwtToken'),
             'Content-type': 'application/json'
                 }),
             })
@@ -98,17 +98,21 @@ class EditProfile extends Component{
 
      handleClick(event){
         console.log("username , loc , bio , bday ==> ",this.state.username,this.state.location,this.state.bio,this.state.birth_date)
+        console.log("bday = ",this.state.birth_date)
         var formData = new FormData();
         formData.append('bio',this.state.bio);
         formData.append('location',this.state.location);
-        formData.append('birth_date',this.state.birth_date);
+        if(this.state.birth_date)
+        {
+            formData.append('birth_date',this.state.birth_date);
+        }
         formData.append('email',this.state.email)
 
         fetch('http://127.0.0.1:8000/my_account/api/my_profile/', {
           method: 'PUT',
           body: formData,
           headers: new Headers({
-                 'Authorization': 'JWT '+this.cookies.get('userJwtToken').token,
+                 'Authorization': 'JWT '+ localStorage.getItem('userJwtToken'),
           }),
         })
         .then(response => response.json())
@@ -117,8 +121,13 @@ class EditProfile extends Component{
             console.log('Success:', response)
             alert("YOUR DATA HAS BEEN SAVED SUCCESSFULLY")
             this.componentDidMount()
+            this.setState({dumy:"dumy"})
         });
      }
+
+//     componentWillMount(){
+//        this.setState({dumy:"dumy"})
+//    }
 
     render(){
 
@@ -138,7 +147,7 @@ class EditProfile extends Component{
                   }}
             >
             <Typography variant="headline" component="h3" >
-              My Profile
+             <p style= {{ fontFamily:"Comic Sans MS"}}> My Profile  </p>
             </Typography>
 
                 <TextField

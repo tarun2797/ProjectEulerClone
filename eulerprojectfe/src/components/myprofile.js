@@ -60,7 +60,7 @@ class MyProfile extends Component{
             {
             method: 'get',
             headers: new Headers({
-            'Authorization': 'JWT '+this.cookies.get('userJwtToken').token,
+            'Authorization': 'JWT '+ localStorage.getItem('userJwtToken'),
             'Content-type': 'application/json'
                 }),
             })
