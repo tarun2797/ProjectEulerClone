@@ -39,8 +39,15 @@ class MyProgress extends React.Component {
                 return results.json();
             })
             .then(data => {
-                console.log(data);
+                console.log("data = ",data);
+                console.log("solved qs = ",data.solved_qs);
+                if(data.solved_qs==''){
+                    data.solved_qs = '[ ]';
+                }
+                 console.log("solved qs = ",data.solved_qs);
+                console.log("parsed solved question obj = ",JSON.parse(data.solved_qs));
                 this.setState({profile:data});
+                this.setState({no_of_questions:JSON.parse(data.solved_qs).length});
                 this.setState({username:data.user.username});
                 this.setState({location:data.location});
                 this.setState({bio:data.bio});
@@ -87,9 +94,11 @@ class MyProgress extends React.Component {
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-slide-description">
-              Hello {this.state.username}
-              <br/>
-              You have solved questions - {this.state.solved_qs}
+              Hello {this.state.username}!!!
+              <br/><br/>
+              Your have solved  {this.state.no_of_questions} question(s) out of 18
+              <br/><br/>
+              Your solved questions - {this.state.solved_qs}
             </DialogContentText>
           </DialogContent>
           <DialogActions>
