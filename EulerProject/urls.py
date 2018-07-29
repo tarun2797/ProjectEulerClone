@@ -28,7 +28,7 @@ from rest_framework_jwt.views import obtain_jwt_token
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'',include('EulerApp.urls')),
-    url('eulerprojectfe/',TemplateView.as_view(template_name="index.html")),
+    url(r'^eulerprojectfe/login/',TemplateView.as_view(template_name="index.html")),
     url(r'^api-jwttoken-auth/', obtain_jwt_token),
     url(r'^api-basictoken-auth/', obtain_auth_token),
 ]
