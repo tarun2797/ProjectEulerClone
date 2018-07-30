@@ -2,47 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a20460-1dd4-45f7-9fc0-bfe40249aac5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EulerProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/EulerProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/config/env.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/config/jest/cssTransform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/config/jest/fileTransform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/config/paths.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/config/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/config/webpack.config.dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/config/webpack.config.prod.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/config/webpackDevServer.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/scripts/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/scripts/start.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/scripts/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components/editProfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components/myProgress.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components/myprofile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components/questions_display.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components/questions_display_material_UI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components/register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components/searchBar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/components/submit_answer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/registerServiceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/views/loginView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eulerprojectfe/src/views/logout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack-stats.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpack-stats.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EulerProject/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/EulerProject/wsgi.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,11 +16,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="production_settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="production_settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EulerProject/production_settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EulerProject/wsgi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#226#235#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Procfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="runtime.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runtime.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -117,8 +119,6 @@
         <option value="$PROJECT_DIR$/eulerprojectfe/src/views/loginView.js" />
         <option value="$PROJECT_DIR$/eulerprojectfe/src/views/logout.js" />
         <option value="$PROJECT_DIR$/eulerprojectfe/Procfile" />
-        <option value="$PROJECT_DIR$/runtime.txt" />
-        <option value="$PROJECT_DIR$/EulerProject/wsgi.py" />
         <option value="$PROJECT_DIR$/eulerprojectfe/package.json" />
         <option value="$PROJECT_DIR$/eulerprojectfe/src/App.js" />
         <option value="$PROJECT_DIR$/EulerProject/urls.py" />
@@ -133,10 +133,13 @@
         <option value="$PROJECT_DIR$/eulerprojectfe/src/components/searchBar.js" />
         <option value="$PROJECT_DIR$/eulerprojectfe/src/components/editProfile.js" />
         <option value="$PROJECT_DIR$/EulerProject/settings.py" />
+        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/runtime.txt" />
+        <option value="$PROJECT_DIR$/EulerProject/wsgi.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-111" />
     <option name="y" value="142" />
     <option name="width" value="1346" />
@@ -153,6 +156,11 @@
           <expand>
             <path>
               <item name="EulerProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EulerProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EulerProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EulerProject" type="462c0819:PsiDirectoryNode" />
               <item name="EulerProject" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -227,6 +235,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22108346" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -441,7 +450,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json" />
-    <entry file="file://$PROJECT_DIR$/Procfile" />
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -449,8 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt" />
-    <entry file="file://$PROJECT_DIR$/runtime.txt" />
     <entry file="file://$PROJECT_DIR$/eulerprojectfe/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -462,13 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EulerProject/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -574,6 +573,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EulerProject/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#226#235#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
