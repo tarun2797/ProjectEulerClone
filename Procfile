@@ -1,1 +1,1 @@
-web: gunicorn EuleProject.wsgi
+web: gunicorn EulerProject.wsgi
