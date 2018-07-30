@@ -25,6 +25,9 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import RaisedButton from 'material-ui/RaisedButton';
+import RemoveIcon from '@material-ui/icons/Remove';
+import DoneIcon from '@material-ui/icons/Done';
+import SearchBar from '../components/searchBar'
 
 const theme1 = createMuiTheme({
   palette: {
@@ -42,12 +45,13 @@ const CustomTableCell = withStyles(theme => ({
 
 
   head: {
+    textAlign:"center",
     backgroundColor: theme1.palette.primary.main,
     color: theme1.palette.secondary.main,
     fontSize: 18,
   },
   body: {
-
+    textAlign:"center",
     backgroundColor: theme1.palette.primary.body_row,
     fontSize: 16,
   },
@@ -162,10 +166,38 @@ class Questions extends Component{
             questions : [],
             page: 0,
             rowsPerPage: 5,
+            search:""
         };
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     cookies = new Cookies();
+
+    getUserSolvedQuestions(){
+
+        fetch(`http://127.0.0.1:8000/my_account/api/my_profile/`,
+            {
+            method: 'get',
+            headers: new Headers({
+            'Authorization': 'JWT '+ localStorage.getItem('userJwtToken'),
+            'Content-type': 'application/json'
+                }),
+            })
+            .then(results =>{
+                return results.json();
+            })
+            .then(data => {
+                if(data.solved_qs==''){
+                    data.solved_qs = '[ ]';
+                }
+                this.setState({no_of_questions:JSON.parse(data.solved_qs).length});
+                this.setState({username:data.user.username});
+                this.setState({solved_qs:JSON.parse(data.solved_qs)});
+                //console.log("profile = ",this.state.profile);
+                //console.log("user solved qs = ",this.state.solved_qs)
+            })
+            .catch(e => {console.log("Error occured in User Profile..")});
+    }
 
     componentDidMount(){
 
@@ -197,6 +229,7 @@ class Questions extends Component{
                 console.log("questions ==> ",this.state.questions)
             })
             .catch(e => {console.log("Error occured in fetching..")});
+            this.getUserSolvedQuestions();
         }
     }
 
@@ -223,16 +256,61 @@ class Questions extends Component{
         this.setState({ rowsPerPage: event.target.value });
     };
 
-    render(){
+    getIcon(question_id){
+//        const ids = this.state.questions.map(question =>{
+//            return question.id
+//        })
+        //console.log("q_id = ",question_id)
+        //console.log("user solved questions = ",this.state.solved_qs)
+        if(this.state.solved_qs != undefined){
 
+            if(this.state.solved_qs.includes(question_id)){
+                return <DoneIcon/>
+            }
+            else{
+                return <RemoveIcon/>
+            }
+        }
+        return <RemoveIcon/>
+    }
+
+    handleSearch(search_val){
+        //console.log("search = ",search_val);
+        this.setState({search:search_val});
+    }
+
+    render(){
         const { classes } = this.props;
-        const { questions, rowsPerPage, page } = this.state;
-        const emptyRows = rowsPerPage - Math.min(rowsPerPage, questions.length - page * rowsPerPage);
+        const { questions, rowsPerPage, page , search} = this.state;
+//        const emptyRows = rowsPerPage - Math.min(rowsPerPage, questions.length - page * rowsPerPage);
+
+        //console.log("search string = ",this.state.search)
+
+        let filtered_questions = questions.filter((question) =>{
+            var str_question_id = String(question.id);
+            var str_question_title = String(question.title).toLowerCase();
+            //console.log("qid = ",temp.indexOf(Number(this.state.search)))
+            return (str_question_id.indexOf(this.state.search) !== -1 ||
+                    str_question_title.indexOf(this.state.search.toLowerCase()) !==-1
+            );
+        });
+
+        const emptyRows = rowsPerPage - Math.min(rowsPerPage, filtered_questions.length - page * rowsPerPage);
+
+//        if(filtered_questions.length==0){
+//            alert("Nothing matched your Result");
+////            this.setState({search:""});
+//        }
 
         const isLoggedIn = this.isAuthenticated();
         return(
          <div>
                 {!isLoggedIn ? <Redirect to='/eulerprojectfe/login/'/> : (
+                <div>
+                <SearchBar
+                        handleSearch = {this.handleSearch}
+                        search = {this.state.search}
+                />
                 <Paper className={this.props.classes.root}>
                 <div className={classes.tableWrapper}>
                     <Table className={this.props.classes.table}>
@@ -240,11 +318,12 @@ class Questions extends Component{
                         <TableRow>
                           <CustomTableCell numeric>ID</CustomTableCell>
                           <CustomTableCell >TITLE</CustomTableCell>
-                          <CustomTableCell numeric>USERS SOLVED</CustomTableCell>
+                          <CustomTableCell >STATUS</CustomTableCell>
+                          <CustomTableCell numeric>SOLVED BY</CustomTableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {questions.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(question => {
+                        {filtered_questions.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(question => {
                           return (
                             <TableRow key={question.id}>
                               <CustomTableCell component="th" scope="row">
@@ -257,6 +336,7 @@ class Questions extends Component{
                                              {question.title}
                                     </Link>
                               </CustomTableCell>
+                              <CustomTableCell numeric>{this.getIcon(question.id)}</CustomTableCell>
                               <CustomTableCell numeric>{question.difficulty}</CustomTableCell>
                             </TableRow>
                           );
@@ -283,6 +363,7 @@ class Questions extends Component{
                     </Table>
                 </div>
                 </Paper>
+                </div>
                 )}
          </div>
         );

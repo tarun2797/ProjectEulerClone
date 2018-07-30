@@ -153,10 +153,10 @@ class SubmitAnswer extends Component{
                                     backgroundColor:"#4db6ac",
                                     fontFamily: "Comic Sans MS",
                                     color:"black",
-                                    fontSize: 25,
+                                    fontSize: 21,
                                 }}
                       >
-                            {this.state.question.title}
+                         {this.state.question.id} . {this.state.question.title}
                       </Paper>
                     </Grid>
                     <Grid item xs={12}  >
@@ -168,7 +168,7 @@ class SubmitAnswer extends Component{
                                     backgroundColor:"#aed581",
                                     fontFamily: "Comic Sans MS",
                                     color:"black",
-                                    fontSize: 30,
+                                    fontSize: 23,
                             }}
                       >
                             {this.state.question.description}

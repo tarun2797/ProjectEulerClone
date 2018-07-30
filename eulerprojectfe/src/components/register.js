@@ -25,7 +25,7 @@ class Register extends Component{
     }
 
     handleClick(event){
-        alert("Thank You For Registering")
+        alert("Thank You For Registering\n Login and Continue...")
         console.log("values --",this.state);
 
         var formData  = new FormData();

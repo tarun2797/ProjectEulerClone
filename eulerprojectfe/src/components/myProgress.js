@@ -89,7 +89,7 @@ class MyProgress extends React.Component {
           aria-labelledby="alert-dialog-slide-title"
           aria-describedby="alert-dialog-slide-description"
         >
-          <DialogTitle id="alert-dialog-slide-title">
+          <DialogTitle id="alert-dialog-slide-title" style={{textAlign:"center"}}>
             {"Progress Card"}
           </DialogTitle>
           <DialogContent>
