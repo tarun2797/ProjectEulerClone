@@ -24,7 +24,7 @@ DEBUG = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['project-euler-clone.herokuapp.com','127.0.0.1','localhost']
 
 
 # Application definition
