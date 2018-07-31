@@ -17,7 +17,7 @@ class ProfileModelSerializer(serializers.ModelSerializer):
         fields = ('id','username','password','email')
 
     '''
-    This create mehod is invoked when serializer is saved in its view method.
+    This create method is invoked when serializer is saved in its view method.
     i.e inside serializer.is_valid() when serializer.save() is called this create method is invoked
     '''
     def create(self, validated_data):
