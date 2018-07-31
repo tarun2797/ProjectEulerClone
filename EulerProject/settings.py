@@ -24,7 +24,7 @@ DEBUG = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['project-euler-clone.herokuapp.com','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['euler-project-clone.herokuapp.com','127.0.0.1','localhost']
 
 
 # Application definition
@@ -165,15 +165,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# from .settings import *
-#
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "assets"),
-# ]
-#
-# WEBPACK_LOADER = {
-#     'DEFAULT': {
-#             'BUNDLE_DIR_NAME': 'bundles/',
-#             'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.prod.json'),
-#         }
-# }
+from .settings import *
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "assets"),
+]
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+            'BUNDLE_DIR_NAME': 'bundles/',
+            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.prod.json'),
+        }
+}
