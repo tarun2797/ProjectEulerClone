@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7a20460-1dd4-45f7-9fc0-bfe40249aac5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/EulerProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/EulerProject/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="c7a20460-1dd4-45f7-9fc0-bfe40249aac5" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,8 +89,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EulerProject/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            <state relative-caret-position="119">
+              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -194,11 +192,6 @@
           <expand>
             <path>
               <item name="EulerProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EulerProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EulerProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EulerProject" type="462c0819:PsiDirectoryNode" />
               <item name="EulerProject" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -653,8 +646,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EulerProject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="119">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
         </state>
       </provider>
     </entry>
